@@ -1,0 +1,37 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+@layer components {
+   
+    .container {
+        @apply max-w-screen-xl mx-auto;
+    }
+    .button {
+        @apply px-4 py-2
+        text-base font-medium rounded-md
+        w-full inline-flex 
+        justify-center
+        transition duration-300 ease-in-out
+        focus:outline-none focus:ring-2 mx-1;
+    }
+    .button--access {
+        @apply  border border-blue-700 hover:border-indigo-900 hover:text-indigo-900  focus:ring-indigo-900 hover:bg-indigo-100;
+    }
+    .button--blue {
+        @apply text-white bg-indigo-600 hover:bg-indigo-700;
+    }
+    .button--red {
+        @apply text-white bg-red-600 hover:bg-red-700 focus:bg-red-700 focus:ring-red-400;
+    }
+
+    .button--gray {
+        @apply border border-gray-300 hover:bg-gray-400 hover:text-gray-50;
+    }
+
+  }
+
+  
+
+
