@@ -45,8 +45,17 @@ class ProductController extends Controller
             'detail' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+        
+         if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }
 
         Product::create($request->all());
+        
+       
 
         return redirect()->route('products.index')
         ->with('success','Product created successfully.');
@@ -90,8 +99,18 @@ class ProductController extends Controller
             'detail' => 'required',
         ]);
 
+        
+        if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }else{
+            unset($input['image']);
+        }
+        
         $product->update($request->all());
-
+          
         return redirect()->route('products.index')
                         ->with('success','Product updated successfully');
     }
