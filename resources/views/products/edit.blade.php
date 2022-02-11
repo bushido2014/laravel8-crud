@@ -43,6 +43,7 @@
                 
                 <label class="block text-base font-medium text-gray-700 mb-1">Add Image: </label>
                     <input type="file" name="image" placeholder="Image" class="w-full rounded">
+                    <img src="/image/{{ $product->image }}" width="300px">
             </div> 
             <div class="my-2 w-full">
                 <label class="block text-base font-medium text-gray-700 mb-1">Detail</label>
