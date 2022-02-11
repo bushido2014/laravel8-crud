@@ -16,10 +16,12 @@
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 bg-white border-b border-gray-200">
              <h2 class="text-3xl mb-2">{{ $product->name }}</h2>
-            
-        
+            <div>
+              <img src="/image/{{ $product->image }}" width="500px">
+            </div>
+        <div>
            <p class="text-base">{{ $product->detail }}</p>
-        
+        <div>
     </div>
         </div>
     </div>
