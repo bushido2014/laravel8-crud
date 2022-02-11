@@ -25,6 +25,7 @@
       <tr class="border-2">
         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">NAME</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">IMAGE</th>
         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">DETAIL</th>
         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ACTION</th>
       </tr>
@@ -34,7 +35,8 @@
         <tr>
             <td class="px-6 py-4">{{ $product->id }}</td>
             <td class="px-6 py-4">{{ $product->name }}</td>
-            <td class="px-6 py-4">{{ $product->detail }}</td>
+            <td class="px-6 py-4">{{ $product->name }}</td>
+            <td class="px-6 py-4"><img src="/image/{{ $product->image }}" width="100px"></td>
             <td class="px-6 py-4" width="270">
                 <form action="{{ route('products.destroy',$product->id) }}" method="POST" class="flex justify-around">
                     <a class="button button--gray" href="{{ route('products.show',$product->id) }}">Show</a>
