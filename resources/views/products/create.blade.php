@@ -28,7 +28,7 @@
     @endif
 </div>
 <div class="max-w-5xl mx-auto flex justify-between py-6">
-    <form action="{{ route('products.store') }}" method="POST" class="max-w-3xl w-full">
+    <form action="{{ route('products.store') }}" method="POST" class="max-w-3xl w-full" enctype="multipart/form-data">
         @csrf
     
          <div class="w-full block">
@@ -39,11 +39,18 @@
                 
             </div>
             <div class="my-2 w-full">
-                <label class="block text-base font-medium text-gray-700 mb-1">Detail</label>
-                    <textarea class="w-full mb-2 rounded" style="height:150px" name="detail" placeholder="Detail"></textarea>
                 
-                    <button type="submit" class="button w-full button--blue">Submit</button>
+                <label class="block text-base font-medium text-gray-700 mb-1">Add Image: </label>
+                    <input type="file" name="image" placeholder="Image" class="w-full rounded">
+                    
+            </div> 
+            <div class="my-2 w-full">
+                <label class="block text-base font-medium text-gray-700 mb-1">Detail</label>
+                    <textarea class="w-full mb-2 rounded" style="height:150px" name="detail" placeholder="Detail"></textarea>    
             </div>
+            <div class="my-2 w-full">
+                <button type="submit" class="button w-full button--blue">Submit</button>
+                </div>
         </div>
     
     </form>

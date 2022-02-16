@@ -46,15 +46,16 @@ class ProductController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         
-         if ($image = $request->file('image')) {
+         
+
+        Product::create($request->all());
+        
+        if ($image = $request->file('image')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['image'] = "$profileImage";
         }
-
-        Product::create($request->all());
-        
        
 
         return redirect()->route('products.index')
