@@ -37,12 +37,6 @@
                 <label class="block text-base font-medium text-gray-700 mb-1">Name: </label>
                     <input type="text" name="name" class="w-full rounded" placeholder="Name">
                 
-            </div>
-            <div class="my-2 w-full">
-                
-                <label class="block text-base font-medium text-gray-700 mb-1">Add Image: </label>
-                    <input type="file" name="image" placeholder="Image" class="w-full rounded">
-                    
             </div> 
             <div class="my-2 w-full">
                 <label class="block text-base font-medium text-gray-700 mb-1">Detail</label>
